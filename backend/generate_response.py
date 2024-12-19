@@ -27,3 +27,15 @@ chain = (
 def generate_response(query):
     request = {"question": query}
     return chain.invoke(request)
+
+
+def generate_stream_response(query:str):
+    request = {"question": query}
+    try:
+        for chunk in chain.stream(request):
+            yield chunk
+    except StopIteration:
+        print("StopIteration")
+    except Exception as e:
+        yield f"Erreur lors de la génération de la réponse: {str(e)}\n"
+

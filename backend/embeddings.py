@@ -11,6 +11,7 @@ model = OllamaLLM(
 	model=os.getenv('MODEL'),
 	temperature=0,
 )
+
 embeddings = OllamaEmbeddings(
 	base_url=os.getenv("BASE_URL"),
 	model=os.getenv('MODEL')
