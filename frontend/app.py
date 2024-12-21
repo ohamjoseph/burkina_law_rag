@@ -34,7 +34,7 @@ def response_generator(query):
     with st.spinner("Recherche en cours..."):
         try:
             # Appel au backend en streaming
-            response = requests.get(f"{API_URL}/generate_stream/", json={"query": query}, stream=True)
+            response = requests.get(f"{API_URL}/generate_stream/", params={"query": query}, stream=True)
 
             if response.status_code == 200:
                 # Lecture du flux en temps réel
@@ -45,6 +45,7 @@ def response_generator(query):
                         print(chunk)
                         response_text += chunk
                         placeholder.markdown(response_text)
+                st.session_state.messages.append({"role": "assistant", "content": response_text})
             else:
                 st.error(f"Erreur du serveur ({response.status_code}): {response.text}")
 

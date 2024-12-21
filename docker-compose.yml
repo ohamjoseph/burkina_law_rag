@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    network_mode: "host"
+    environment:
+      - API_ENV=${API_ENV}
+      - HOST=${HOST}
+      - PORT=${PORT}
+      - MODEL=${MODEL}
+      - OLLAMA_HOST=${OLLAMA_HOST}
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "8501:8501"
+    network_mode: "host"
+    environment:
+      - API_URL=${API_URL}
+    depends_on:
+      - backend
+    restart: always

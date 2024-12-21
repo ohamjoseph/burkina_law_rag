@@ -7,8 +7,8 @@ Une application basée sur l'intelligence artificielle utilisant LangChain et Ol
 ## **🚀 Déploiement Local**
 
 ### **1. Prérequis**  
-- **Python 3.9+**  
-- **Docker (facultatif)**  
+- **Python 3.12+**  
+- **Docker (facultatif)**
 
 ### **2. Installation**
 1. Clonez le dépôt :
@@ -63,7 +63,7 @@ Une application basée sur l'intelligence artificielle utilisant LangChain et Ol
 3. **Ajoutez LLaMA à vos Variables d’Environnement** :
    ```env
    MODEL=llama3.2
-   OLLAMA_HOST=http://localhost:11434
+   BASE_URL=http://localhost:11434
    ```
 
 ---
@@ -100,22 +100,16 @@ docker-compose up --build
 ## **📊 Fonctionnalités**
 1. **Recherche Augmentée :** Interrogez la Constitution avec des requêtes en langage naturel.  
 2. **Modèle IA Local :** Utilise LLaMA en local via Ollama.  
-3. **Backend API REST :** Développé avec FastAPI, documentation incluse.  
+3. **Backend API REST :** Développé avec FastAPI.  
 4. **Interface Utilisateur Simple :** Streamlit pour une expérience utilisateur fluide.  
 
 ---
 
 ## **📦 Technologies Utilisées**
-- **Langues :** Python 3.9+  
+- **Langues :** Python 3.12+  
 - **Frameworks Backend :** FastAPI, FAISS  
 - **Frontend :** Streamlit  
 - **IA & Modèles :** LangChain, Ollama, LLaMA  
-
----
-
-## **🔒 Sécurité et Confidentialité**
-- Les clés API et configurations sont stockées dans `.env`.  
-- **Important :** Ne partagez pas ce fichier `.env` en public.
 
 ---
 

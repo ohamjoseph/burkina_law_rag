@@ -1,0 +1,27 @@
+# Ignorer les répertoires d'environnements virtuels
+venv/
+rag_env/
+*.egg-info
+
+# Ignorer les fichiers temporaires et compilés
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.sqlite3
+
+# Ignorer les fichiers de configuration locaux
+.env
+*.env
+*.local
+
+# Ignorer les fichiers générés par l'IDE
+.vscode/
+.idea/
+*.swp
+
+# Ignorer les fichiers de contrôle de version
+.git/
+.gitignore
+.DS_Store
+

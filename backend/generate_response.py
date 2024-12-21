@@ -3,7 +3,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableMap
 
 import utils
-from embeddings import model
+from embeddings import model, llm
 from retrieval import load_index, retrieval
 
 
@@ -11,7 +11,7 @@ parser = StrOutputParser()
 
 prompt = PromptTemplate.from_template(utils.template_str)
 
-path = "/home/hamed/Documents/Perso/Python/mastering_rag/embeddings_model/RAG/data/database"
+path = "./data/database"
 index = load_index(path)
 
 chain = (
